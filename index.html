@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clothing & Footwear Store</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #333;
+  }
+  header {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  h2 {
+    border-bottom: 2px solid #222;
+    padding-bottom: 8px;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .card {
+    flex: 1 1 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: white;
+    transition: box-shadow 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  .card img {
+    width: 100%;
+    display: block;
+    height: 250px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 15px;
+  }
+  .product-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .product-category {
+    font-size: 14px;
+    color: #555;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    margin-top: 40px;
+  }
+
+  @media(max-width: 600px){
+    .products {
+      flex-direction: column;
+    }
+    .card {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  Clothing & Footwear Store
+</header>
+
+<div class="container">
+  <section>
+    <h2>Sweaters Collection</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://i.ibb.co/Zhz1DCk/sweater1.jpg" alt="Striped Sweater" />
+        <div class="card-body">
+          <div class="product-name">Striped Sweater</div>
+          <div class="product-category">Sweater</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/gP29PnG/sweater2.jpg" alt="California Beige Sweater" />
+        <div class="card-body">
+          <div class="product-name">California Sweatshirt</div>
+          <div class="product-category">Sweater</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/2y851xq/sweater3.jpg" alt="Hope Purple Sweater" />
+        <div class="card-body">
+          <div class="product-name">Hope Graphic Sweater</div>
+          <div class="product-category">Sweater</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/wpqQ0Bd/sweater7.jpg" alt="Black & White Sweater" />
+        <div class="card-body">
+          <div class="product-name">Black & White Knitted Sweater</div>
+          <div class="product-category">Sweater</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/WVxnQvR/sweater10.jpg" alt="Light Pink Sweater" />
+        <div class="card-body">
+          <div class="product-name">Light Pink Sweater</div>
+          <div class="product-category">Sweater</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/cJvW8C2/sweater9.jpg" alt="Brown Casual Sweater" />
+        <div class="card-body">
+          <div class="product-name">Brown Casual Sweater</div>
+          <div class="product-category">Sweater</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Footwear Collection</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://i.ibb.co/xC5VsfC/white-sneaker1.jpg" alt="White Sneakers" />
+        <div class="card-body">
+          <div class="product-name">Simple White Sneakers</div>
+          <div class="product-category">Shoes</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/gDs2Y4X/white-sneaker2.jpg" alt="High Top Shoes" />
+        <div class="card-body">
+          <div class="product-name">White High Tops</div>
+          <div class="product-category">Shoes</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/NZ46TzB/red-shoes.jpg" alt="Red Running Shoes" />
+        <div class="card-body">
+          <div class="product-name">Red Running Shoes</div>
+          <div class="product-category">Shoes</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/m6FqH1f/white-shoe3.jpg" alt="White Shoes with Stripes" />
+        <div class="card-body">
+          <div class="product-name">White Shoes with Stripes</div>
+          <div class="product-category">Shoes</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/q5GtQHp/gray-sports.jpg" alt="Gray Sports Shoes" />
+        <div class="card-body">
+          <div class="product-name">Gray Sports Shoes</div>
+          <div class="product-category">Shoes</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/7j6k5Sz/white-sneaker4.jpg" alt="White Sporty Shoes" />
+        <div class="card-body">
+          <div class="product-name">White Sporty Shoes</div>
+          <div class="product-category">Shoes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  &copy; 2024 Clothing & Footwear Store. All rights reserved.
+</footer>
+
+</body>
+</html>
