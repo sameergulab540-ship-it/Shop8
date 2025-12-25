@@ -6,88 +6,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial;background:#f5f5f5}
-.container{max-width:420px;margin:auto;background:#fff;min-height:100vh}
-.product-img{width:100%;height:360px;object-fit:cover;transition:.4s}
-.content{padding:15px}
-.price{font-size:22px;font-weight:bold}
-
-select,input,button{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  font-size:15px;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
 }
 
-.buy-row{
-  display:flex;
-  gap:10px;
+.container {
+  max-width: 420px;
+  margin: auto;
+  background: #fff;
+  min-height: 100vh;
 }
 
-.buy-btn{
-  flex:1;
-  background:#000;
-  color:#fff;
-  border:none;
-  border-radius:30px;
-  font-size:16px;
-  transition:.3s;
+.product-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: .4s;
 }
-.buy-btn:active{transform:scale(.96)}
 
-.add-btn{
-  flex:1;
-  background:#fff;
-  color:#000;
-  border:2px solid #000;
-  border-radius:30px;
-  font-size:16px;
-  transition:.3s;
+.content {
+  padding: 15px;
 }
-.add-btn:active{transform:scale(.96)}
 
-.slider{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding:10px;
+.price {
+  font-size: 22px;
+  font-weight: bold;
 }
-.slider::-webkit-scrollbar{display:none}
 
-.card{
-  min-width:120px;
-  background:#eee;
-  border-radius:10px;
-  padding:5px;
-  text-align:center;
-  transition:.3s;
+/* Updated buy-row with animation and styling */
+.buy-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 50px;
+  padding: 10px 15px;
+  max-width: 350px;
+  margin: 15px auto 0 auto;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  position: relative;
 }
-.card:active{transform:scale(.95)}
 
-.card img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:8px;
+.buy-btn, .add-btn {
+  flex: none;
+  background: transparent;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+  border-radius: 30px;
+}
+
+.buy-btn:hover, .add-btn:hover {
+  color: #ff4b5c;
+}
+
+.center-icon {
+  background: #000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4b5c;
+  font-size: 24px;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(255, 75, 92, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 75, 92, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(255, 75, 92, 0.5);
+  }
+}
+
+.arrow {
+  color: #ccc;
+  font-weight: bold;
+  user-select: none;
+  margin: 0 4px;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Existing general inputs/buttons */
+select,input,button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.card {
+  min-width: 120px;
+  background: #eee;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.card:active {
+  transform: scale(.95);
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
 /* CHECKOUT */
-.checkout{
-  display:none;
-  padding:20px;
-  animation:slideUp .4s ease;
-}
-@keyframes slideUp{
-  from{transform:translateY(100%);opacity:0}
-  to{transform:translateY(0);opacity:1}
+.checkout {
+  display: none;
+  padding: 20px;
+  animation: slideUp .4s ease;
 }
 
-.pay{
-  background:#25D366;
-  color:#fff;
-  border:none;
-  border-radius:30px;
-  font-size:16px;
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pay {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pay:active {
+  transform: scale(0.96);
+}
+
+.buy-btn:active {
+  transform: scale(0.96);
+}
+
+.add-btn:active {
+  transform: scale(0.96);
 }
 </style>
 </head>
@@ -96,50 +189,55 @@ select,input,button{
 
 <div class="container">
 
-<!-- PRODUCT PAGE -->
-<div id="productPage">
-<img id="mainImg" class="product-img" src="Ss/images/img1.jpg">
+  <!-- PRODUCT PAGE -->
+  <div id="productPage">
+    <img id="mainImg" class="product-img" src="Ss/images/img1.jpg">
 
-<div class="content">
-<h2 id="title">Product Name</h2>
-<div class="price">₹<span id="price">1600</span></div>
+    <div class="content">
+      <h2 id="title">Product Name</h2>
+      <div class="price">₹<span id="price">1600</span></div>
 
-<select id="size">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
+      <select id="size">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
 
-<div class="buy-row">
-  <button class="buy-btn" onclick="openCheckout()">BUY NOW</button>
-  <button class="add-btn" onclick="addBag()">ADD TO BAG</button>
-</div>
-</div>
+      <div class="buy-row">
+        <button class="buy-btn" onclick="openCheckout()">BUY NOW</button>
 
-<div class="slider" id="productSlider"></div>
-</div>
+        <span class="arrow">&lt;&lt;&lt;</span>
+        <div class="center-icon">👕</div>
+        <span class="arrow">&gt;&gt;&gt;</span>
 
-<!-- CHECKOUT PAGE -->
-<div id="checkoutPage" class="checkout">
-<h2>Checkout</h2>
+        <button class="add-btn" onclick="addBag()">ADD TO BAG</button>
+      </div>
+    </div>
 
-<p><b>Product:</b> <span id="cProduct"></span></p>
-<p><b>Price:</b> ₹<span id="cPrice"></span></p>
+    <div class="slider" id="productSlider"></div>
+  </div>
 
-<input id="name" placeholder="Full Name">
-<input id="phone" placeholder="Phone Number">
-<input id="address" placeholder="Full Address">
+  <!-- CHECKOUT PAGE -->
+  <div id="checkoutPage" class="checkout">
+    <h2>Checkout</h2>
 
-<select id="cSize">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
+    <p><b>Product:</b> <span id="cProduct"></span></p>
+    <p><b>Price:</b> ₹<span id="cPrice"></span></p>
 
-<button class="pay" onclick="whatsappOrder()">ORDER ON WHATSAPP</button>
-</div>
+    <input id="name" placeholder="Full Name">
+    <input id="phone" placeholder="Phone Number">
+    <input id="address" placeholder="Full Address">
+
+    <select id="cSize">
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XL</option>
+    </select>
+
+    <button class="pay" onclick="whatsappOrder()">ORDER ON WHATSAPP</button>
+  </div>
 
 </div>
 
@@ -158,21 +256,27 @@ const WHATSAPP = "9149561990";
 
 const slider = document.getElementById("productSlider");
 
-IMAGES.forEach((img,i)=>{
+IMAGES.forEach((img, i) => {
   const d = document.createElement("div");
-  d.className="card";
-  d.innerHTML = `<img src="Ss/images/${img}"><p>Product ${i+1}</p>`;
-  d.onclick = ()=>{
-    document.getElementById("mainImg").src = "Ss/images/"+img;
-    document.getElementById("title").innerText = "Product "+(i+1);
+  d.className = "card";
+  d.innerHTML = `<img src="Ss/images/${img}"><p>Product ${i + 1}</p>`;
+  d.onclick = () => {
+    document.getElementById("mainImg").src = "Ss/images/" + img;
+    document.getElementById("title").innerText = "Product " + (i + 1);
     document.getElementById("price").innerText = PRICE;
+
+    // Smooth scroll product slider into view bottom
+    slider.scrollIntoView({
+      behavior: "smooth",
+      block: "end"
+    });
   };
   slider.appendChild(d);
 });
 
-function openCheckout(){
-  document.getElementById("productPage").style.display="none";
-  document.getElementById("checkoutPage").style.display="block";
+function openCheckout() {
+  document.getElementById("productPage").style.display = "none";
+  document.getElementById("checkoutPage").style.display = "block";
   document.getElementById("cProduct").innerText =
     document.getElementById("title").innerText;
   document.getElementById("cPrice").innerText =
@@ -181,11 +285,11 @@ function openCheckout(){
     document.getElementById("size").value;
 }
 
-function addBag(){
+function addBag() {
   alert("Added to bag ✔");
 }
 
-function whatsappOrder(){
+function whatsappOrder() {
   const msg =
 `🛍️ New Order
 
@@ -198,7 +302,7 @@ Phone: ${phone.value}
 Address: ${address.value}`;
 
   window.open(
-    "https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),
+    "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg),
     "_blank"
   );
 }
